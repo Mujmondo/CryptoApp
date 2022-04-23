@@ -6,16 +6,21 @@
 }
 
 body {
-  background-color: rgb(240, 240, 240);
+  background-color: var(--body-bg);
   margin: 0;
   font-family: 'Poppins' ,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 :root{
-  --main-color: #167ba3;
-  --side-color: #333;
-  --side-color: #333;
+  --body-bg: #1a1a1a;
+  --header-bg: #1f1f1f;
+  --green: #33df7b;
+  --blue: #3378df;
+  --red: #df3333;
+  --yellow: #dfce33;
+  --side-header-color: #c9c9c9;
+  --text-color: #e9e9e9;
 }
 
 code {
@@ -24,24 +29,33 @@ code {
 }
 
 .main-header{
-  color: var(--main-color);
-  border-left: 5px solid var(--main-color);
+  color: #fff;
+  border-left: 5px solid #fff;
   padding-left: 5px;
   font-size: 28px;
   font-weight: 500;
 }
 
 .side-header{
-  color: var(--side-color);
+  color: var(--side-header-color);
   font-weight: 400;
   font-size: 18px;
 }
 
 header{
-  background-color: var(--main-color);
+  position: relative;
+  background-color: var(--header-bg);
   width: 100%;
-
 }
+
+header::before{
+  position: absolute;
+  content: '';
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, rgba(44,207,191,1) 0%, rgba(37,166,89,1) 19%, rgba(122,162,6,1) 45%, rgba(246,202,22,1) 74%, rgba(152,7,7,1) 100%);}
 
 header .brand a{
   color: #fff;
@@ -51,8 +65,8 @@ header .brand a{
 
 header .brand a span{
   position: relative;
-  background-color: #fff;
-  color: #333;
+  background-color: var(--red);
+  color: #fff;
   padding: 2px 3px;
   margin-right: 2px;
   font-weight: 500;
@@ -67,7 +81,7 @@ header .brand a span::before{
   width: 100%;
   height: 0;
   display: inline-block;
-  background-color: var(--side-color);
+  background-color: var(--red);
   transition: all 0.3s ease-in;
   z-index: -1;
 }
@@ -93,7 +107,7 @@ header .navbar li a{
   position: relative;
   color: #fff;
   text-decoration: none;
-  padding: 22px 10px;
+  padding: 20px 10px;
 }
 
 header .navbar li a::before{
@@ -117,6 +131,6 @@ header .navbar li a:hover::before{
 }
 
 .statistics p{
-  color: var(--main-color);
+  color: var(--yellow);
   font-size: 30px;
 }
