@@ -13,7 +13,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 :root{
-  --body-bg: #1a1a1a;
+  --body-bg: #2b2b2b;
   --header-bg: #1f1f1f;
   --green: #33df7b;
   --blue: #3378df;
@@ -28,8 +28,13 @@ code {
     monospace;
 }
 
+.section{
+  background-color: #1f1f1f;
+  border-radius: 16px;
+}
+
 .main-header{
-  color: #fff;
+  color: var(--green);
   border-left: 5px solid #fff;
   padding-left: 5px;
   font-size: 28px;
@@ -55,7 +60,9 @@ header::before{
   left: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(90deg, rgba(44,207,191,1) 0%, rgba(37,166,89,1) 19%, rgba(122,162,6,1) 45%, rgba(246,202,22,1) 74%, rgba(152,7,7,1) 100%);}
+  background: linear-gradient(90deg, rgba(44,207,191,1) 0%, rgba(37,166,89,1) 19%, rgba(122,162,6,1) 45%, rgba(246,202,22,1) 74%, rgba(152,7,7,1) 100%);
+  box-shadow: 0 6px 6px 1px rgb(0, 0, 0, 30%);
+}
 
 header .brand a{
   color: #fff;
@@ -133,4 +140,33 @@ header .navbar li a:hover::before{
 .statistics p{
   color: var(--yellow);
   font-size: 30px;
+}
+
+/* CryptoCurrencies*/
+.cryptoCurrencies .card{
+  background-color: var(--header-bg);
+}
+
+.cryptoCurrencies .card .card-header{
+  border-bottom: 1px solid #ddd;
+
+}
+
+.cryptoCurrencies .card h4{
+  color: var(--yellow);
+  font-size: 20px;
+}
+
+.cryptoCurrencies .card span{
+  background-color: var(--green);
+  color: var(--body-bg);
+  padding: 4px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cryptoCurrencies .card li{
+  color: var(--side-header-color);
+  
 }
