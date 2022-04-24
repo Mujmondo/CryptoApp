@@ -12,7 +12,7 @@ const Homepage = () => {
     if (isFetching) return 'Loading..';
     return (
         <>{data.map(currency =>
-            <div className="container py-4 my-5">
+            <div className="container b-b py-4 my-5">
                 <h2 className='main-header mb-4'>Global Crypto Stats</h2>
                 <div className="row section justify-content-center  text-center py-3 pb-0">
                     <div className="col-sm-12 col-md-6 col-lg-3">
@@ -46,21 +46,15 @@ const Homepage = () => {
             </div>
         )}
 
-            <div className="container">
-                <h4 className="main-header mb-4">
-                    Top 10 CryptoCurrencies!
-                </h4>
+            <div className="container b-b pb-3">
                 <Cryptocurrencies count={10} isSearchable={false} />
                 <div className="text-center mx-auto py-4">
                     <button className='more-btn'><Link to='/cryptocurrencies'>Show more</Link></button>
                 </div>
             </div>
 
-            <div className="container">
-                <h4 className="main-header mb-4">
-                    Latest CryptoCurrency News!
-                </h4>
-                <News count={6}/>    
+            <div className="container mb-5">
+                <News count={6} />
                 <div className="text-center mx-auto ">
                     <button className='more-btn'><Link to='/news'>Show more</Link></button>
                 </div>

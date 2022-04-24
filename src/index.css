@@ -15,12 +15,12 @@ body {
 }
 
 :root {
-  --body-bg: #2b2b2b;
-  --header-bg: #1f1f1f;
-  --green: #33df7b;
+  --body-bg: rgb(21, 32, 43);
+  --header-bg: rgb(13, 23, 33);
+  --green: #0ea14b;
   --blue: #3378df;
   --red: #df3333;
-  --yellow: #d1cf54;
+  --yellow: #54aed1;
   --side-header-color: #c9c9c9;
   --text-color: #e9e9e9;
 }
@@ -30,8 +30,12 @@ code {
     monospace;
 }
 
+.b-b {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.068);
+}
+
 .section {
-  background-color: #1f1f1f;
+  background-color: var(--header-bg);
   border: 1px solid #1f1f1f;
   border-radius: 16px;
 }
@@ -40,7 +44,7 @@ code {
   color: var(--text-color);
   border-left: 5px solid var(--text-color);
   padding-left: 5px;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 500;
 }
 
@@ -64,7 +68,7 @@ header::before {
   width: 100%;
   height: 5px;
   background: linear-gradient(90deg, rgba(44, 207, 191, 1) 0%, rgba(37, 166, 89, 1) 19%, rgba(122, 162, 6, 1) 45%, rgba(246, 202, 22, 1) 74%, rgba(152, 7, 7, 1) 100%);
-  box-shadow: 0 6px 6px 1px rgb(0, 0, 0, 30%);
+  /* box-shadow: 0 6px 6px 1px rgb(0, 0, 0, 30%); */
 }
 
 header .brand a {
@@ -75,8 +79,9 @@ header .brand a {
 
 header .brand a span {
   position: relative;
-  background-color: var(--yellow);
-  color: #fff;
+  background-color: #fff;
+  color: var(--yellow);
+  border-radius: 20px;
   padding: 2px 3px;
   margin-right: 2px;
   font-weight: 500;
@@ -117,32 +122,50 @@ header .navbar li a {
   position: relative;
   color: #fff;
   text-decoration: none;
-  padding: 20px 10px;
+  padding: 10px 10px;
 }
 
-header .navbar li a::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  display: inline-block;
-  background-color: #fff;
-  transition: all 0.3s ease-in;
+header .navbar li a:hover {
+  color: var(--yellow);
 }
 
-header .navbar li a:hover::before {
-  width: 100%;
-}
-
-@media(max-width:768px){
-  header ul{
+@media(max-width:768px) {
+  header ul {
     display: none !important;
   }
 }
 
-/* homepage */
+/* Footer */
+footer {
+  background-color: var(--header-bg);
+  padding: 50px 0;
+}
+
+footer p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+footer .footer-header {
+  font-size: 18px;
+  color: var(--yellow);
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer ul li,
+footer ul li a {
+  font-size: 14px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+
+/* Homepage */
 .statistics p {
   color: var(--yellow);
   font-size: 30px;
@@ -156,10 +179,15 @@ header .navbar li a:hover::before {
 .cryptoCurrencies .search-container input {
   padding: 10px 10px;
   width: 500px;
-  background-color: #424242;
+  background: rgba(0, 0, 0, 0.1);
   color: #ddd;
   border: 0;
   border-bottom: 2px solid var(--side-header-color);
+}
+
+.cryptoCurrencies .search-container input:focus {
+  background: rgba(0, 0, 0, 0.3);
+
 }
 
 .cryptoCurrencies .search-container input::placeholder {
@@ -170,22 +198,35 @@ header .navbar li a:hover::before {
   outline: none !important;
 }
 
-button {
+.more-btn {
+  background-color: var(--body-bg);
+  width: 120px;
+  height: 45px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+
+.more-btn a,
+.more-btn:hover a {
+  color: #fff;
+  text-decoration: none;
+
+}
+
+.more-btn:hover {
+  background-color: rgb(16, 25, 34);
+}
+
+.cryptoCurrencies button {
   background-color: var(--red);
   color: #fff;
   border: 0;
   width: 100px;
   height: 46px;
-
 }
 
-button a {
-  text-decoration: none;
-  color: #fff;
-}
 
-button:hover,
-button a:hover {
+.cryptoCurrencies button:hover {
   color: #fff;
   background-color: var(--blue);
 }
@@ -206,12 +247,12 @@ button a:hover {
 }
 
 .cryptoCurrencies .card h4 {
-  color: var(--yellow);
+  color: #fff;
   font-size: 20px;
 }
 
 .cryptoCurrencies .card span {
-  background-color: var(--side-header-color);
+  background-color: var(--yellow);
   color: var(--body-bg);
   padding: 4px;
   font-size: 12px;
@@ -234,7 +275,7 @@ button a:hover {
   text-decoration: none;
 }
 
-.news .card .card-head{
+.news .card .card-head {
   display: flex;
   align-items: stretch;
   padding: 10px 5px;
@@ -247,7 +288,7 @@ button a:hover {
 }
 
 .news .card .card-head h4 {
-  color: var(--yellow);
+  color: #fff;
   font-size: 16px;
 }
 
@@ -261,7 +302,7 @@ button a:hover {
   font-size: 12px;
 }
 
-.news .card .card-foot{
+.news .card .card-foot {
   border: 0;
   border-top: 1px solid #ddd;
 }

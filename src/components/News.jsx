@@ -9,6 +9,9 @@ const News = ({ count = 12 }) => {
     const demoImage = 'http://coinrevolution.com/wp-content/uploads/2020/06/cryptonews.jpg';
     return ( 
       <div className="container mt-5 pt-4 news">
+            <h4 className="main-header mb-4">
+                    Latest CryptoCurrency News!
+                </h4>
         <div className="row">
             {data?.value.map((news) => (
             <div className="col-sm-12 col-sm-6 col-md-4 mb-3">

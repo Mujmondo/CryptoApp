@@ -15,18 +15,22 @@ const Cryptocurrencies = ({ count = 100, isSearchable = true }) => {
 
     if (isFetching) return 'Loading..';
 
-    if(!cryptos) return 'No results found.';
+    if (!cryptos) return 'No results found.';
 
     return (
         <>
-            <div className="container cryptoCurrencies">
-                {isSearchable && <div className="search-container mb-3 mt-5 pt-4 d-flex align-items-center justify-content-center text-center">
-                    <input
-                        type="text"
-                        placeholder='Search Cryptocurrency..'
-                        onChange={e => setSearchInput(e.target.value)} />
-                    <button>Search</button>
-                </div>}
+            <div className="container cryptoCurrencies mt-5 pt-4">
+                <div className="d-flex justify-content-between align-items-center">
+                    <h4 className="main-header mb-4">
+                        {`Top ${count} CryptoCurrencies!`}
+                    </h4>
+                    {isSearchable && <div className="search-container mb-3 d-flex align-items-center justify-content-center text-center">
+                        <input
+                            type="text"
+                            placeholder='Search Cryptocurrency..'
+                            onChange={e => setSearchInput(e.target.value)} />
+                    </div>}
+                </div>
                 <div className="row">
                     {cryptos.map(currency =>
                         <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-2">

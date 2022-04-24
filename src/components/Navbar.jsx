@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom';
+import logo from '../images/logo.png';
 const Navbar = () => {
     return (
         <header className='py-3'>
             <div className="container d-flex justify-content-between align-items-center">
                 <div className="brand">
-                    <Link to="/"><span>Crypto</span>Currency</Link>
+                    <Link to="/">
+                        <img src={logo}
+                            width='120'
+                            alt="logo" />
+                    </Link>
                 </div>
                 <ul className="navbar m-0 p-0">
                     <li className="nav-item">
