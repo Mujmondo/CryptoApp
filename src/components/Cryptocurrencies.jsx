@@ -1,16 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import millify from 'millify';
 import { useGetCryptoCurrenciesQuery } from '../services/cryptoApi';
 
 const Cryptocurrencies = () => {
-
     const { data, isFetching } = useGetCryptoCurrenciesQuery();
-    const [cryptos, setCryptos] =  useState(data?.data);
+    const [cryptos, setCryptos] =  useState([]);
+    const [searchInput, setSearchInput] =  useState('');
+
+    useEffect(() => {
+        const filiteredData = data?.data.filter((coin) => coin.name.toLowerCase().includes(searchInput.toLowerCase()));
+        setCryptos(filiteredData);
+    }, [data, searchInput]);
+
     if (isFetching) return 'Loading..';
 
     return ( 
        <>
-           <div className="container cryptoCurrencies my-5">
+           <div className="container cryptoCurrencies mt-5 my-2">
+               <div className="search-container d-flex align-items-center justify-content-center text-center">
+                   <input 
+                   type="text"
+                   placeholder='Search Cryptocurrency..'
+                   onChange={e => setSearchInput(e.target.value)} />
+                   <button>Search</button>
+               </div>
                <div className="row">
                {cryptos.map(currency => 
                    <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-2">

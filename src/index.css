@@ -143,13 +143,46 @@ header .navbar li a:hover::before{
 }
 
 /* CryptoCurrencies*/
+.cryptoCurrencies .search-container{
+ margin-bottom: 20px;
+}
+
+.cryptoCurrencies .search-container input{
+  padding: 10px 10px;
+  width: 500px;
+  background-color: #424242;
+  color: #ddd;
+  border: 0;
+  border-bottom: 2px solid var(--side-header-color);
+}
+.cryptoCurrencies .search-container input::placeholder{
+  color: #ddd;
+}
+
+.cryptoCurrencies .search-container input:focus{
+outline: none !important;
+}
+
+button, button a{
+  background-color: var(--red);
+  color: #fff;
+  border: 0;
+  width: 100px;
+  height: 46px;
+  text-decoration: none;
+}
+
+button:hover, button a:hover{
+  color: #fff;
+  background-color: var(--blue);
+}
+
 .cryptoCurrencies .card{
   background-color: var(--header-bg);
 }
 
 .cryptoCurrencies .card .card-header{
   border-bottom: 1px solid #ddd;
-
 }
 
 .cryptoCurrencies .card h4{

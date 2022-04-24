@@ -2,6 +2,7 @@ import millify from 'millify';
 import { Link } from 'react-router-dom';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
+import Cryptocurrencies from './Cryptocurrencies';
 
 
 const Homepage = () => {
@@ -9,7 +10,7 @@ const Homepage = () => {
     if (isFetching) return 'Loading..';
     return (
         <>{data.map(currency =>
-            <div className="container section py-4 my-5">
+            <div className="container py-4 my-5">
                 <h2 className='main-header'>Global Crypto Stats</h2>
                 <div className="row py-3">
                     <div className="col-sm-12 col-md-6">
@@ -40,8 +41,19 @@ const Homepage = () => {
                         </div>
                     </div>
                 </div>
+                <hr style={{color: '#fff'}} />
             </div>
         )}
+
+    <div className="container">
+        <h4 className="main-header">
+            Top 10 CryptoCurrencies!
+        </h4>
+        <Cryptocurrencies />   
+        <div className="text-center mx-auto py-4">
+        <button><Link to='/cryptocurrencies'>Show more</Link></button> 
+        </div>
+    </div>
         </>
     );
 }
