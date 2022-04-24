@@ -227,23 +227,28 @@ button a:hover {
 .news .card {
   border: 1px solid var(--header-bg);
   background-color: var(--header-bg);
-  border-radius: 0;
+  border-radius: 12px;
 }
 
 .news .card a {
   text-decoration: none;
 }
 
+.news .card .card-head{
+  display: flex;
+  align-items: stretch;
+  padding: 10px 5px;
+}
+
 .news .card .card-head img {
-  width: 100%;
-  max-height: 200px;
-  min-height: 200px;
+  max-width: 100px;
+  height: 100px;
   margin-bottom: 10px;
 }
 
 .news .card .card-head h4 {
   color: var(--yellow);
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .news .card p {
@@ -254,6 +259,11 @@ button a:hover {
 .news .card span {
   color: var(--yellow);
   font-size: 12px;
+}
+
+.news .card .card-foot{
+  border: 0;
+  border-top: 1px solid #ddd;
 }
 
 .news .card .card-foot img {

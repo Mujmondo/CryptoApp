@@ -25,7 +25,7 @@ const News = ({ count = 12 }) => {
                         ? `${news.description.substring(0, 100)}...`
                         : news.description}
                         </p>
-                        <div className="card-foot px-2 border-0 d-flex justify-content-between align-items-center">
+                        <div className="card-foot px-2 pt-2 d-flex justify-content-between align-items-center">
                             <div className="d-flex align-items-center">
                             <img src={news?.provider[0]?.image?.thumbnail?.contentUrl || demoImage}  alt="" />
                             <p className="p-0 m-0">{news?.provider[0]?.name}</p>
