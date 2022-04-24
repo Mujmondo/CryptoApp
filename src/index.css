@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
-*{
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -8,11 +9,12 @@
 body {
   background-color: var(--body-bg);
   margin: 0;
-  font-family: 'Poppins' ,sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-:root{
+
+:root {
   --body-bg: #2b2b2b;
   --header-bg: #1f1f1f;
   --green: #33df7b;
@@ -28,49 +30,49 @@ code {
     monospace;
 }
 
-.section{
+.section {
   background-color: #1f1f1f;
   border-radius: 16px;
 }
 
-.main-header{
+.main-header {
   color: var(--green);
-  border-left: 5px solid #fff;
+  border-left: 5px solid var(--green);
   padding-left: 5px;
   font-size: 28px;
   font-weight: 500;
 }
 
-.side-header{
+.side-header {
   color: var(--side-header-color);
   font-weight: 400;
   font-size: 18px;
 }
 
-header{
+header {
   position: relative;
   background-color: var(--header-bg);
   width: 100%;
 }
 
-header::before{
+header::before {
   position: absolute;
   content: '';
   bottom: -5px;
   left: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(90deg, rgba(44,207,191,1) 0%, rgba(37,166,89,1) 19%, rgba(122,162,6,1) 45%, rgba(246,202,22,1) 74%, rgba(152,7,7,1) 100%);
+  background: linear-gradient(90deg, rgba(44, 207, 191, 1) 0%, rgba(37, 166, 89, 1) 19%, rgba(122, 162, 6, 1) 45%, rgba(246, 202, 22, 1) 74%, rgba(152, 7, 7, 1) 100%);
   box-shadow: 0 6px 6px 1px rgb(0, 0, 0, 30%);
 }
 
-header .brand a{
+header .brand a {
   color: #fff;
   text-decoration: none;
   font-size: 20px;
 }
 
-header .brand a span{
+header .brand a span {
   position: relative;
   background-color: var(--red);
   color: #fff;
@@ -80,7 +82,7 @@ header .brand a span{
   z-index: 1;
 }
 
-header .brand a span::before{
+header .brand a span::before {
   content: '';
   position: absolute;
   left: 0;
@@ -93,31 +95,31 @@ header .brand a span::before{
   z-index: -1;
 }
 
-header .brand a:hover span::before{
+header .brand a:hover span::before {
   height: 100%;
 }
 
-header .brand a:hover span{
+header .brand a:hover span {
   color: #fff;
   background-color: transparent;
 }
 
-header .navbar{
+header .navbar {
   list-style-type: none;
 }
 
-header .navbar li{
+header .navbar li {
   margin-left: 20px;
 }
 
-header .navbar li a{
+header .navbar li a {
   position: relative;
   color: #fff;
   text-decoration: none;
   padding: 20px 10px;
 }
 
-header .navbar li a::before{
+header .navbar li a::before {
   content: '';
   position: absolute;
   left: 0;
@@ -129,25 +131,24 @@ header .navbar li a::before{
   transition: all 0.3s ease-in;
 }
 
-header .navbar li a:hover::before{
+header .navbar li a:hover::before {
   width: 100%;
 }
 
 /* homepage */
-.statistics{
-}
+.statistics {}
 
-.statistics p{
+.statistics p {
   color: var(--yellow);
   font-size: 30px;
 }
 
 /* CryptoCurrencies*/
-.cryptoCurrencies .search-container{
- margin-bottom: 20px;
+.cryptoCurrencies .search-container {
+  margin-bottom: 20px;
 }
 
-.cryptoCurrencies .search-container input{
+.cryptoCurrencies .search-container input {
   padding: 10px 10px;
   width: 500px;
   background-color: #424242;
@@ -155,42 +156,49 @@ header .navbar li a:hover::before{
   border: 0;
   border-bottom: 2px solid var(--side-header-color);
 }
-.cryptoCurrencies .search-container input::placeholder{
+
+.cryptoCurrencies .search-container input::placeholder {
   color: #ddd;
 }
 
-.cryptoCurrencies .search-container input:focus{
-outline: none !important;
+.cryptoCurrencies .search-container input:focus {
+  outline: none !important;
 }
 
-button, button a{
+button {
   background-color: var(--red);
   color: #fff;
   border: 0;
   width: 100px;
   height: 46px;
-  text-decoration: none;
+
 }
 
-button:hover, button a:hover{
+button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+button:hover,
+button a:hover {
   color: #fff;
   background-color: var(--blue);
 }
 
-.cryptoCurrencies .card{
+.cryptoCurrencies .card {
   background-color: var(--header-bg);
 }
 
-.cryptoCurrencies .card .card-header{
+.cryptoCurrencies .card .card-header {
   border-bottom: 1px solid #ddd;
 }
 
-.cryptoCurrencies .card h4{
+.cryptoCurrencies .card h4 {
   color: var(--yellow);
   font-size: 20px;
 }
 
-.cryptoCurrencies .card span{
+.cryptoCurrencies .card span {
   background-color: var(--green);
   color: var(--body-bg);
   padding: 4px;
@@ -199,7 +207,7 @@ button:hover, button a:hover{
   font-weight: 600;
 }
 
-.cryptoCurrencies .card li{
+.cryptoCurrencies .card li {
   color: var(--side-header-color);
-  
+
 }

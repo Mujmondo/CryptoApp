@@ -7,7 +7,7 @@ const createApiHeaders = {
 
 const baseUrl = 'https://coinlore-cryptocurrency.p.rapidapi.com';
 
-const createRequest = (url) => ({ url, headers: createApiHeaders});
+const createRequest = (url) => ({ url, headers: createApiHeaders });
 
 export const cryptoApi = createApi({
     reducerPath: 'cryptoApi',
@@ -17,12 +17,12 @@ export const cryptoApi = createApi({
             query: () => createRequest('/api/global/')
         }),
         getCryptoCurrencies: builder.query({
-            query: () => createRequest('/api/tickers/')
+            query: (count = 10) => createRequest(`/api/tickers/?limit=${count}`)
         })
     })
 });
 
 export const {
     useGetCryptosQuery,
-    useGetCryptoCurrenciesQuery,
+    useGetCryptoCurrenciesQuery
 } = cryptoApi;

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import millify from 'millify';
 import { Link } from 'react-router-dom';
 
@@ -6,6 +7,11 @@ import Cryptocurrencies from './Cryptocurrencies';
 
 
 const Homepage = () => {
+    const moreBtn = document.querySelector('.more-btn');
+    useEffect(() => {
+
+    }, [moreBtn]);
+
     const { data = [], isFetching } = useGetCryptosQuery();
     if (isFetching) return 'Loading..';
     return (
@@ -41,19 +47,19 @@ const Homepage = () => {
                         </div>
                     </div>
                 </div>
-                <hr style={{color: '#fff'}} />
+                <hr style={{ color: '#fff' }} />
             </div>
         )}
 
-    <div className="container">
-        <h4 className="main-header">
-            Top 10 CryptoCurrencies!
-        </h4>
-        <Cryptocurrencies />   
-        <div className="text-center mx-auto py-4">
-        <button><Link to='/cryptocurrencies'>Show more</Link></button> 
-        </div>
-    </div>
+            <div className="container">
+                <h4 className="main-header">
+                    Top 10 CryptoCurrencies!
+                </h4>
+                <Cryptocurrencies count={10} isSearchable={false} />
+                <div className="text-center mx-auto py-4">
+                    <button className='more-btn'><Link to='/cryptocurrencies'>Show more</Link></button>
+                </div>
+            </div>
         </>
     );
 }
