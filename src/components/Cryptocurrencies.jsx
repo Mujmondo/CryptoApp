@@ -10,12 +10,17 @@ const Cryptocurrencies = ({ count = 100, isSearchable = true }) => {
     useEffect(() => {
         const filiteredData = data?.data.filter((coin) => coin.name.toLowerCase().includes(searchInput.toLowerCase()));
         setCryptos(filiteredData);
+        window.scrollTo(0, 0);
     }, [data, searchInput]);
+
     if (isFetching) return 'Loading..';
+
+    if(!cryptos) return 'No results found.';
+
     return (
         <>
-            <div className="container cryptoCurrencies mt-5 my-2">
-                {isSearchable && <div className="search-container d-flex align-items-center justify-content-center text-center">
+            <div className="container cryptoCurrencies">
+                {isSearchable && <div className="search-container mb-3 mt-5 pt-4 d-flex align-items-center justify-content-center text-center">
                     <input
                         type="text"
                         placeholder='Search Cryptocurrency..'
