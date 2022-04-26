@@ -1,12 +1,19 @@
+import { useEffect } from "react";
 import Skeleton from "./Skeleton";
 import moment from "moment";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 
 const News = ({ count = 20 }) => {
     const { data, isLoading } = useGetCryptoNewsQuery({ newsCategory: 'Cryptocurrency', count});
-        if(isLoading) return <div  className="page skeleton-news container py-4 mt-5"><div className="titl mb-4"></div><div className="row"><Skeleton type={"news"}/></div></div>;
-
+    
     const demoImage = 'http://coinrevolution.com/wp-content/uploads/2020/06/cryptonews.jpg';
+    
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    }, []);
+    
+    if(isLoading) return <div  className="page skeleton-news container py-4 mt-5"><div className="titl mb-4"></div><div className="row"><Skeleton type={"news"}/></div></div>;
+    
     return ( 
 
       <div className="container page mt-5 pt-4 news">
