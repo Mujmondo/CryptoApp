@@ -4,15 +4,18 @@ import { Link } from 'react-router-dom';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
 import Cryptocurrencies from './Cryptocurrencies';
+import Skeleton from './Skeleton';
 import News from './News';
 
 
 const Homepage = () => {
-    const { data = [], isFetching } = useGetCryptosQuery();
-    if (isFetching) return 'Loading..';
+    const { data = [], isLoading } = useGetCryptosQuery();
+      if (isLoading) return <Skeleton type={'stat'} />;
     return (
-        <>{data.map(currency =>
-            <div className="container b-b py-4 my-5">
+        <>
+        <div className="page">
+        {data.map(currency =>
+            <div className="container  b-b py-4 mt-5">
                 <h2 className='main-header mb-4'>Global Crypto Stats</h2>
                 <div className="row section justify-content-center  text-center py-3 pb-0">
                     <div className="col-sm-12 col-md-6 col-lg-3">
@@ -58,6 +61,7 @@ const Homepage = () => {
                 <div className="text-center mx-auto ">
                     <button className='more-btn'><Link to='/news'>Show more</Link></button>
                 </div>
+            </div>
             </div>
         </>
     );

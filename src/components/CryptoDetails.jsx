@@ -1,9 +1,9 @@
 const CryptoDetails = () => {
-    return ( 
-        <div>
+    return (
+        <div className="page">
             CryptoDetails
         </div>
-     );
+    );
 }
- 
+
 export default CryptoDetails;

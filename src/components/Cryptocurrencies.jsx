@@ -19,7 +19,7 @@ const Cryptocurrencies = ({ count = 100, isSearchable = true }) => {
 
     return (
         <>
-            <div className="container cryptoCurrencies mt-5 pt-4">
+            <div className="container page cryptoCurrencies mt-5 pt-4">
                 <div className="d-flex justify-content-between align-items-center">
                     <h4 className="main-header mb-4">
                         {`Top ${count} CryptoCurrencies!`}

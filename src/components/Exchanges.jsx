@@ -1,9 +1,9 @@
 const Exchanges = () => {
-    return ( 
-        <div>
+    return (
+        <div className="page">
             Exchanges
         </div>
-     );
+    );
 }
- 
+
 export default Exchanges;
