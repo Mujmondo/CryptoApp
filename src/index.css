@@ -31,7 +31,7 @@ code {
 }
 
 .page{
-  min-height: 350px;
+  min-height: 450px;
 }
 
 .b-b {
@@ -406,6 +406,37 @@ footer ul li a {
   background-color: var(--body-bg);
   width: 60px;
   height: 15px;
+}
+.c-container{
+  animation: skeleton 1s ease-in-out infinite alternate;
+}
+.c-card{
+  background-color: var(--header-bg);
+  width: 296px;
+  height: 149px;
+  border-radius: 4px;
+}
+
+.c-titl{
+  background-color: var(--body-bg);
+  width: 150px;
+  height: 25px;
+}
+.c-btn{ 
+  background-color: var(--body-bg);
+  width: 40px;
+  height: 30px;
+}
+
+.c-info{ 
+  background-color: var(--body-bg);
+  width: 190px;
+  height: 15px;
+  margin-bottom: 10px;
+}
+
+.c-info:nth-child(2){ 
+  width: 150px;
 }
 
 @keyframes skeleton{

@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import millify from 'millify';
+import Skeleton from './Skeleton';
 import { useGetCryptoCurrenciesQuery } from '../services/cryptoApi';
 
 const Cryptocurrencies = ({ count = 100, isSearchable = true }) => {
     const [searchInput, setSearchInput] = useState('');
-    const { data, isFetching } = useGetCryptoCurrenciesQuery(count);
+    const { data, isLoading } = useGetCryptoCurrenciesQuery(count);
     const [cryptos = [], setCryptos] = useState(data?.data);
 
     useEffect(() => {
@@ -13,9 +14,8 @@ const Cryptocurrencies = ({ count = 100, isSearchable = true }) => {
         window.scrollTo(0, 0);
     }, [data, searchInput]);
 
-    if (isFetching) return 'Loading..';
+    if (isLoading) return   <div className="container page c-container mt-5 pt-4"><div className="titl mb-4"></div><div className="row"><Skeleton type={'currencies'}/></div></div>;
 
-    if (!cryptos) return 'No results found.';
 
     return (
         <>
