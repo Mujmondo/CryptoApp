@@ -4,7 +4,7 @@ import { Navbar, Exchanges, Homepage, Cryptocurrencies, CryptoDetails, News, Foo
 
 function App() {
   return (
-    <div className="App">
+    <div className='app'>
       <div className="navbar p-0">
         <Navbar />
       </div>
