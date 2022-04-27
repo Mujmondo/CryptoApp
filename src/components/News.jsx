@@ -21,7 +21,7 @@ const News = ({ count = 20 }) => {
             </h4>
             <div className="row">
                 {data?.value.map((news) => (
-                    <div className="col-sm-12 col-sm-6 col-md-4 mb-3">
+                    <div className="col-sm-12 col-md-6 col-lg-4 mb-3">
                         <div className="card pb-2">
                             <a href={news.url} target='_blank' rel='noreferrer'>
                                 <div className="card-head">

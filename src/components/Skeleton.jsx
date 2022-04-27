@@ -48,6 +48,23 @@ export default function Skeleton({ type }) {
         </div>
     );
 
-    if (type === 'stat') return <StatSkeleton />;
-    if (type === 'news') return Array(counter).fill(<NewsSkeleton />);
-}
+        const CurrenciesSkeleton = () => (
+            <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-2">
+            <div className="c-card">
+                <div className="pt-2 c-hdr d-flex justify-content-between align-items-center px-2 py-2">
+                    <div className="c-titl"></div>
+                    <div className="c-btn"></div>
+                </div>
+                  <div className="px-2 mt-3">
+                  <div className="c-info"></div>
+                    <div className="c-info"></div>
+                    <div className="c-info"></div>
+                  </div>
+            </div>
+        </div>
+        );
+        
+        if(type === 'stat') return <StatSkeleton />;
+        if(type === 'news') return Array(counter).fill(<NewsSkeleton />);
+        if(type === 'currencies') return Array(16).fill(<CurrenciesSkeleton />);
+    }

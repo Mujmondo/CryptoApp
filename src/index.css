@@ -30,8 +30,8 @@ code {
     monospace;
 }
 
-.page {
-  min-height: 350px;
+.page{
+  min-height: 450px;
 }
 
 .b-b {
@@ -133,9 +133,53 @@ header .navbar li a:hover {
   color: var(--yellow);
 }
 
+header .nav-toggler{
+  display: none;
+  width: 35px;
+  height: 35px;
+  background-color: var(--yellow);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+header .nav-toggler svg{
+  color: var(--header-bg);
+}
+
+header .close-menu-btn{
+  display: none;
+}
+
 @media(max-width:768px) {
-  header ul {
-    display: none !important;
+  header .nav{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--yellow);
+    z-index: 100;
+  }
+  header .nav ul{
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 50px !important;
+  }
+  header .nav ul li{
+    margin-bottom: 3rem;
+  }
+  header .nav svg{
+    margin: 24px 5px 0 0;
+  }
+  header .nav-toggler{
+    display: flex;
+  }
+  header .close-menu-btn{
+    display: block;
   }
 }
 
@@ -200,6 +244,8 @@ footer ul li a {
 .cryptoCurrencies .search-container input:focus {
   outline: none !important;
 }
+
+
 
 .more-btn {
   background-color: var(--body-bg);
@@ -413,6 +459,37 @@ footer ul li a {
   background-color: var(--body-bg);
   width: 100px;
   height: 10px;
+}
+.c-container{
+  animation: skeleton 1s ease-in-out infinite alternate;
+}
+.c-card{
+  background-color: var(--header-bg);
+  width: 296px;
+  height: 149px;
+  border-radius: 4px;
+}
+
+.c-titl{
+  background-color: var(--body-bg);
+  width: 150px;
+  height: 25px;
+}
+.c-btn{ 
+  background-color: var(--body-bg);
+  width: 40px;
+  height: 30px;
+}
+
+.c-info{ 
+  background-color: var(--body-bg);
+  width: 190px;
+  height: 15px;
+  margin-bottom: 10px;
+}
+
+.c-info:nth-child(2){ 
+  width: 150px;
 }
 
 .news-tim {
